@@ -1,0 +1,56 @@
+#createnewad{
+    position: absolute;
+    width: 12%;
+    padding: 15px 20px;
+    margin-top: 77px;
+    right: 50px;
+    color: white;
+    outline: none;
+    border: none;
+    background: #1DA1F2;
+    height: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+    text-align: center;
+}
+#create:hover{
+    background: #eaebf5;
+    opacity: 0.7;
+}
+
+#userads{
+    top: 150px;
+    left: 160px;
+    position: relative;
+    width: 75vw;
+}
+
+#table{
+    width: 100%;
+    border: 1px;
+    font-size: 18px;
+}
+thead{
+    background-color: #212044;
+    color: #eaebf5;
+}
+tbody{
+    background-color: #e2e2e7;
+    color: #000000;
+    text-align: center;
+    
+}
+thead th{
+    padding: 10px;
+}
+tbody td{
+    padding: 7px;
+}
+#noads{
+    text-align: center;
+    background-color: #e2e2e7;
+    margin-right: 0%;
+}

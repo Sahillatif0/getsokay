@@ -1,0 +1,231 @@
+#maindiv{
+    background: white;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+}
+#search-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+}
+#searchbox{
+    border-radius: 20px;
+    border: 2px solid black;
+    display: flex;
+    width: 50%;
+    overflow: hidden;
+    min-width: 400px;
+}
+#searchinput{
+    width: 90%;
+}
+#search{
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+}
+#searchicon{
+    width: 10%;
+}
+#searchicon button{
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+}
+#searchicon i{
+    font-size: 22px;
+}
+#filtercontainer{
+    display: flex;
+    width: 100%;
+    height: max-content;
+    flex-wrap: wrap;
+}
+.filter{
+    display: flex;
+    border-radius: 20px;
+    background: #ecf0f3;
+    width: 10%;
+    height: 5vh;
+    margin: 5px;
+    min-width: 90px;
+}
+.filterbtn, .filter input{
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    height: 100%;
+}
+#datefrom, #dateto{
+    width: 15%;
+    padding: 10px;
+    height: 2vh;
+}
+.filter input{
+    font-size: 12px;
+}
+#requestscontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+
+}
+#requests{
+    display: flex;
+    flex-direction: column;
+    background: #ecf0f3;
+    width: 95%;
+    height: fit-content;
+    border-radius: 30px;
+    min-width: 850px;
+}
+.heading{
+    display: flex;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background: rgb(19, 19, 39);
+    color: white;
+    /* border-bottom: 1px solid rgb(255, 255, 255); */
+}
+.heading .dataitems{
+    font-size: 21px;
+}
+.dataitems{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 20px;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.history{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+.depositusername{
+    width: 20%;
+    border-left: none;
+}
+.trxid{
+    width: 18%;
+}
+.depositamount{
+    width: 12%;
+}
+.depositmethod{
+    width: 15%;
+}
+.depositdate{
+    width: 15%;
+}
+.depositedit{
+    width: 20%;
+    border-right: none;
+}
+.editbtn{
+    width: 60%;
+    min-width: 75px;
+    height: 30px;
+    color: white;
+    padding: 0px;
+    border: none;
+    font-weight: bold;
+    margin-left: 5px;
+    border-radius: 10px;
+}
+.editbtn:hover{
+    opacity: 0.7;
+    transition: 5ms;
+}
+/* .pendingbtn{
+    background: #5681eb;
+    box-shadow: #758c8f 2px 2px 2px 2px;
+}
+.approvedbtn{
+    background: #5beb56;
+    box-shadow: #65a367 2px 2px 2px 2px;
+}
+.rejectedbtn{
+    background: #d65c5c;
+    box-shadow: #7b5259 2px 2px 2px 2px; 
+} */
+.selectedfilterBtn{
+    background: #6ab6f0;
+}
+
+.unselectedfilterBtn{
+    background: #ecf0f3;    
+}
+#amount{
+    justify-content: center;
+}
+#amountFilterbtn{
+    width: 100%;
+    margin: 0;
+    background: inherit;
+}
+#popupinput{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    width: 18%;
+    height: 26%;
+    border: none;
+    background: #ecf0f3;
+    padding: 15px;
+    padding-left: 20px;
+    border: 10px solid rgb(9 177 235);
+    border-radius: 50px;
+    box-shadow: 8px 7px 0px #cbced1, -3px -9px 9px white;  
+    /* box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;    */
+
+}
+#popupinput input{
+    width: 91%;
+    border: 1px solid;
+    text-align: center;
+    margin: 10px;
+    height: 40%;
+}
+.okbtn{
+    color: white;
+    margin-top: 20px;
+    background: #1DA1F2;
+    border: none;
+    outline: none;
+    height: 70px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+}
+@media only screen and (max-width: 1000px){
+    #requestscontainer{
+        justify-content: flex-start;
+        padding: 0 17px;
+    }
+    }
+@media only screen and (max-width: 600px){
+    #searchbox{
+        width: 80%;
+        min-width: unset;
+    }
+    #searchinput{
+        width: 83%;
+    }
+    #searchicon{
+        width: 17%;
+    }
+}

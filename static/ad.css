@@ -1,0 +1,10 @@
+#timer{
+    height: 30px;
+    text-align: center;
+}
+#duration{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}

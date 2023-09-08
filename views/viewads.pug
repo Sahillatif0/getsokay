@@ -1,0 +1,31 @@
+extends account-base.pug
+
+block title
+    title Setting
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="http://localhost:3000/socket.io/socket.io.js" defer)
+    script(src="../static/viewads.js" defer)
+
+block link
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/account-base.css")
+    link(rel="stylesheet", href="../static/viewads.css")
+
+
+
+block content
+    div#container
+        a#create(href = "/createads") #[#createnewad Create New Ad] 
+        #ads
+            - for(let i=(ads.length-1); i>=0; i--)
+                .ad(id = `ad${i}`) 
+                    a.link(href=`/ad?ID=${ads[i].ad_id}` target="_blank") #[p.description(id=`description${ads[i].ad_id}`) #{ads[i].description}]
+                    p.reward(id=`reward${ads[i].ad_id}`) #{ads[i].cpc} GOT
+                    p#duration #{ads[i].duration}
+                    p.views(id=`views${ads[i].ad_id}`) #{ads[i].clickdone}
+                    p(id=ads[i].ad_id)
+        #errorbox
+            p#error(username=currentUser.username)
+        #FREEBOX

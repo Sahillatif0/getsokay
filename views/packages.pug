@@ -1,0 +1,54 @@
+extends account-base.pug
+
+block title
+    title Packages
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/account-base.js" defer)
+    script(src="../static/packages.js" defer)
+
+block link
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/account-base.css")
+    link(rel="stylesheet", href="../static/dashboard.css")
+    link(rel="stylesheet", href="../static/packages.css")
+
+
+block content
+    div#container
+        #msg
+        #packages 
+            table 
+                thead 
+                    th Name
+                    th #[i(class="fa fa-egg")] FREE
+                    th #[i(class="fa fa-star")] STANDARD
+                    th#premium #[i(class="fa fa-crown")] PREMIUM
+                tbody 
+                    tr 
+                        td.name Per Referral
+                        td 0.4 GOT
+                        td 1 GOT
+                        td 1.5 GOT
+                    tr 
+                        td.name Referral Investments
+                        td 20%
+                        td 50%
+                        td 80%
+                    tr 
+                        td.name Minimum Withdraw
+                        td 60 GOT
+                        td 40 GOT
+                        td 20 GOT
+                    tr 
+                        td.name Price
+                        td FREE
+                        td 20 GOT
+                        td 100 GOT
+                    tr#status 
+                        td.name Status
+                        td #[button#free.btn FREE]
+                        td #[button#buy1.btn(onclick='upgrade()') BUY NOW]
+                        td #[button#buy2.btn(onclick='upgrade()') BUY NOW]

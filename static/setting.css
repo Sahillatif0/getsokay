@@ -1,0 +1,212 @@
+#container{
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+    overflow: auto;
+    height: 100vh;
+}
+#SettingPage{
+    display: flex;
+    height: 80%;
+    width: 80%;
+    margin-top: 30px;
+    background: #ecf0f3;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    border-radius: 30px;
+}
+#side-options{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+    border-radius: 30px;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    background: #e2e7eb;
+}
+#heading{
+    display: flex;
+    height: 10%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+#side-options li{
+    list-style: none;
+
+}
+#profile{
+    border-top: 1px solid rgb(121, 121, 128);
+}
+.settingmenu{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 20px;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    /* background: #cdd7df; */
+    border-bottom: 1px solid rgb(121, 121, 128);
+    box-sizing: border-box;
+}
+.settingmenu:hover{
+    cursor: pointer;
+    color: rgb(82, 77, 77);
+    opacity: 0.5;
+}
+#option-data{
+    width: 80%;
+    height: 100%;
+}
+#profile-data{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+#data-leftside{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#data-rightside{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#avatar{
+    display: flex;
+    padding-top: 10px;
+    width: 100%;
+    height: 25vw;
+    max-height: 260px;
+    margin-left: 10%;
+}
+#avatar i{
+    cursor: pointer;
+}
+#image{
+    width: 70%;
+    max-width: 200px;
+    height: 21vw;
+    max-height: 200px;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin-left: 5%;
+}
+#Avatars{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    height: 80%;
+    width: 80%;
+    background: #ecf0f3;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    border-radius: 30px;
+    display: none;
+
+}
+#avatarspic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 73%;
+    overflow: auto;
+}
+.avatars-4{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.avatar{
+    width: 20%;
+    max-width: 180px;
+    height: 15vw;
+    max-height: 180px;
+    border-radius: 50%;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    margin: 5px;
+}
+#buttons{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    margin-right: 3%;
+}
+
+.btn{
+    border: none;
+    padding: 8px 20px;
+    font-weight: bold;
+    margin-left: 5px;
+    border-radius: 10px;
+    color: #ecf0f3;
+    box-shadow: 7px 4px 8px #cbced1, -4px 7px 16px white;
+}
+.btn:hover{
+    opacity: 0.7;
+    transition: 5ms;
+}
+#select{
+    background: linear-gradient(rgb(25, 160, 25),rgb(133, 197, 133));
+}
+/* .view{
+    background: linear-gradient(rgb(53, 207, 218),rgb(128, 226, 233));
+} */
+#cancel{
+    background: linear-gradient(rgb(236, 94, 58),rgb(236, 120, 120));
+}
+
+#otherdata{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    margin-left: 10%;
+}
+label{
+    font-weight: bold;
+}
+.inputbox{
+    background: #ecf0f3;
+    width: 70%;
+    display: flex;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 50px;
+    margin: 10px 0px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;     
+}
+.inputbox input{
+    background: #ecf0f3;
+    border: none;
+    width: 80%;
+    outline: none;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-top: 6px;
+}
+.inputbox i{
+    margin-top: 6px;
+    cursor: pointer;
+}
+#otherinputs{
+    padding: 40px 0px;
+}
+#button{
+    display: flex;
+    height: 50%;
+    justify-content: flex-end;
+    align-items: end;
+    padding-right: 50px;
+}
+.btn{
+    height: 33px;
+}

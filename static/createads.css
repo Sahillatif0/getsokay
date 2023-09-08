@@ -1,0 +1,90 @@
+#createadform{
+    position: absolute;
+    top: 170px;
+    left: 170px;
+    width: 80%;
+    height: 120%;
+    border-radius: 20px;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+#createadform h1{
+    text-align: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+form label{
+    margin: 5px 35px;
+}
+form input,form select{
+    background: #ecf0f3;
+    padding: 10px;
+    padding-left: 20px;
+    height: 20px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+    outline: none;
+    border: none;
+    width: 90%;
+    margin-left: 27px;
+}
+form select{
+    height: 50px;
+    width: 92%;
+}
+form select option{
+    margin: 30px;
+}
+#preview{
+    border: 1px solid rgb(70, 68, 68);
+    padding: 20px;
+    margin: 20px;
+}
+.btn{
+    color: white;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    background: #1DA1F2;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+    width: 90%;
+    margin-left: 27px;
+}
+#prices{
+    padding-left: 220px;
+    display: flex;
+}
+.box{
+    width: 20%;
+    height: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    background: #1DA1F2;
+    padding: 20px;
+    text-align: center;
+    color: #ecf0f3;
+}
+#Available{
+    width: 23%;
+}
+
+#errorbox{
+    position: absolute;
+    top: 80px;
+    right: 25px;
+    background: #d14343;
+    border-radius: 10px;
+}
+#error{
+    font-size: 13px;
+    margin-top: 3px;
+    color: #ecf0f3;
+    font-weight: bold;
+}

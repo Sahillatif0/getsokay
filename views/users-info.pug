@@ -1,0 +1,43 @@
+extends admin-base.pug
+
+block title
+    title Users Info
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/admin-base.js" defer)
+    script(src="../static/user-info.js" defer)
+
+block link
+    link(rel="stylesheet", href="../static/admin-base.css")
+    link(rel="stylesheet", href="../static/users-info.css")
+
+
+
+block content
+    div#container
+        #search-container 
+            #searchbox
+                #searchinput 
+                    input(type="search" id= "search" name = "search" placeholder="Search User") 
+                #searchicon 
+                    button#searchicon #[i(class= "fa fa-magnifying-glass")]
+        #users
+            - for(let i=(users.length-1); i>=0; i--)
+                .user(id = `${users[i].userID}`) 
+                    .usernamebox.infobox
+                        p.username(id=`username${users[i].username}`) #{users[i].username}
+                    .availbalbox.infobox
+                        p.availbal(id=`availbal${users[i].username}`) #{users[i].availableBalance} GOT
+                    .planbox.infobox
+                        p.plan #{users[i].plan}
+                    .accountbox.infobox
+                        p.account(id=`account${users[i].username}`) #{users[i].account}
+                    .btnsbox.infobox
+                        button.btn.view(id=`view${users[i].username}` type="button" onclick=`onviewuser(${users[i].userID})`) View
+                        button.btn.edit(id=`edit${users[i].username}` type="button" onclick=`onedituser(${users[i].userID})`) Edit
+                        button.btn.message(id=`message${users[i].username}` type="button" onclick=`onmessageuser(${users[i].userID})`) Message
+        #errorbox
+            p#error
+        #FREEBOX

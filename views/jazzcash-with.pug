@@ -1,0 +1,73 @@
+extends account-base.pug
+
+block title
+    title Withdrawl - JazzCash
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/account-base.js" defer)
+    script(src="../static/easypaisa-with.js" defer)
+
+block link
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/account-base.css")
+    link(rel="stylesheet", href="../static/easypaisa-dep.css")
+
+
+block content
+    div#container
+        #depositdetails 
+            h3 Details #[i(class="fa fa-question-circle")]
+            p 
+                b Price: 
+                | 1 GOT = 5 PKR 
+            p#minimum(minimum=currentUser.minimum) 
+                b Note: 
+                | Minimum Withdrawl amount is #{currentUser.minimum} GOT.
+        #form
+            #method-logo
+                img(src="../static/images/jazzcash.png", alt="easypaisa")
+            #method-name(style="color: #f7b40b") JazzCash
+            form(action="/easypaisa-with", method="post", id="easypaisa-dep-form", deposit_method="jazzcash")
+                #EPnamebox.boxee
+                    i(class="fa-regular fa-id-badge") 
+                    input(name="EPname" type="text" id="EPname" placeholder="Enter Your JazzCash Name")
+                #EPnumberbox.boxee
+                    i(class="fa-regular fa-id-badge") 
+                    input(name="TrxID" type="phone" id="EPnumber" placeholder="Enter Your JazzCash Number")
+                #Amountbox.boxee
+                    i(class="fa fa-coins")
+                    input(name="amount" type="Number" id="amount" placeholder="Enter Withdrawl Amount") 
+                p#fee.small 5% Fee
+                #recievees
+                    p.small will recieve ~ 
+                    p#recieve.small
+                style.
+                    .small{
+                        margin: 10px;
+                        font-size: 12px;
+                        color: green;
+                    }
+                    #recieve{
+                        margin-left: 0px;
+                    }
+                    #recievees{
+                        margin-top: -13px;
+                        display: flex;
+                    } 
+                button(class="btn" type="button" onclick="onSubmitWithData()") Submit Request
+        #errorbox
+            p#error
+        #FREEBOX
+    #confirmationPopup 
+        #statusmessage
+                #statusicon
+                    .wrapper
+                        svg.checkmark(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 52 52')
+                            circle.checkmark__circle(cx='26' cy='26' r='25' fill='none')
+                            path.checkmark__check(fill='none' d='M14.1 27.2l7.1 7.2 16.7-16.8')
+                #statusmes
+                    p#mess Your Request Has Been Submitted Successfully 
+                #statusbtn
+                    button#thankyou.btn(onclick="onOk()") Thank You

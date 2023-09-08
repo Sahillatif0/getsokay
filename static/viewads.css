@@ -1,0 +1,77 @@
+#ads{
+    width: 80%;
+    top: 162px;
+    left: 148px;
+    position: relative;
+}
+.ad{
+    width: 90%;
+    height: 100px;
+    margin: 20px 30px;
+    border-radius: 20px;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+    padding: 20px;
+}
+#createnewad{
+    position: absolute;
+    width: 12%;
+    padding: 15px 20px;
+    margin-top: 77px;
+    right: 50px;
+    color: white;
+    outline: none;
+    border: none;
+    background: #1DA1F2;
+    height: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+    text-align: center;
+}
+#create:hover{
+    background: #eaebf5;
+    opacity: 0.7;
+}
+.link{
+    text-decoration: none;
+}
+.description{
+    color: limegreen;
+    font-weight: bold;
+}
+.reward{
+    color: rgb(205, 50, 166);
+    font-weight: bold;
+    margin: 10px;
+}
+#duration{
+    color: rgb(97, 93, 96);
+    top: -27px;
+    left: 100px;
+    position: relative;
+}
+.views{
+    top: -43px;
+    left: 615px;
+    position: relative;
+}
+.watched{
+    color:rgb(97, 93, 96);
+}
+#errorbox{
+    position: absolute;
+    top: 80px;
+    right: 25px;
+    background: #d14343;
+    border-radius: 10px;
+}
+#error{
+    font-size: 13px;
+    margin-top: 3px;
+    color: #ecf0f3;
+    font-weight: bold;
+}
+

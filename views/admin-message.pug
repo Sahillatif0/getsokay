@@ -1,0 +1,31 @@
+extends admin-base.pug
+
+block title
+    title Message
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/admin-base.js" defer)
+    script(src="../static/admin-message.js" defer)
+
+block link
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/admin-base.css")
+    link(rel="stylesheet", href="../static/admin-message.css")
+
+
+
+block content
+    div#container
+        #box
+            #titlebox.inputbox
+                input(type="text" id= "title" name = "title" placeholder="Enter title") 
+            #messagebox.inputbox
+                textarea(cols=30 rows=10 id= "message" name = "message" value="hi" placeholder="Enter Message") 
+            #btnsbox
+                button.btn#send(type="button" onclick=`onsendmessage(${user.userID})`) Send
+                button.btn#back(type="button" onclick=`onCancel(${user.userID})`) Back
+        #errorbox
+            p#error
+        #FREEBOX

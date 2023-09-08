@@ -1,0 +1,75 @@
+extends admin-base.pug
+
+block title
+    title Deposit Data 
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/admin-base.js" defer)
+    script(src="../static/admin-deposit.js" defer)
+
+block link
+    link(rel="stylesheet", href="../static/admin-base.css")
+    link(rel="stylesheet", href="../static/admin-deposit.css")
+
+
+
+block content
+    div#container
+        #search-container 
+            #searchbox
+                #searchinput 
+                    input(type="search" id= "search" name = "search" placeholder="Search Deposit")
+                #searchicon 
+                    button#searchicon #[i(class= "fa fa-magnifying-glass")]
+        #filtercontainer
+            #datefrom.filter.unselectedfilterBtn 
+                input#datetimefrom(type="datetime-local", name="datefrom")
+            #dateto.filter.unselectedfilterBtn
+                input#datetimeto(type="datetime-local", name="dateto")
+            #pending.filter.unselectedfilterBtn
+                button.filterbtn(id="pending" onclick="onfilter('pending','STATUS')") Pending
+            #approved.filter.unselectedfilterBtn
+                button.filterbtn(id="approved" onclick="onfilter('approved','STATUS')") Approved
+            #rejected.filter.unselectedfilterBtn
+                button.filterbtn(id="rejected" onclick="onfilter('rejected','STATUS')") Rejected
+            #amount.filter.unselectedfilterBtn
+                #amountFilterbtn.filter
+                    button.filterbtn(id="amountbtn" onclick="onamount()") Amount
+                #popupinput 
+                    input#amountinput(type="number", name="amount1", placeholder="Enter From Amount")
+                    input#amountinput2(type="number", name="amount2", placeholder="Enter To Amount")
+                    button.okbtn(id="ok" onclick=`onok()`) OK
+            #easypaisa.filter.unselectedfilterBtn
+                button.filterbtn(id="easypaisa" onclick="onfilter('easypaisa','METHOD')") Easypaisa
+            #jazzcash.filter.unselectedfilterBtn
+                button.filterbtn(id="jazzcash" onclick="onfilter('jazzcash','METHOD')") Jazzcash
+            #tronlink.filter.unselectedfilterBtn
+                button.filterbtn(id="tronlink" onclick="onfilter('tronlink','METHOD')") Tronlink
+        #requestscontainer 
+            #requests
+                .heading
+                    .depositusername.dataitems Username
+                    .trxid.dataitems Trx_id
+                    .depositamount.dataitems Amount
+                    .depositmethod.dataitems Method
+                    .depositdate.dataitems Date
+                    .depositedit.dataitems Edit
+                - if(deposithistory.length==0){
+                    p.nodata No deposit data to show
+                - }
+                - else{
+                - for(let i=(deposithistory.length-1); i>=0; i--)
+                    .deposits.history(id = deposithistory[i].depositID)
+                        .depositusername.dataitems #{deposithistory[i].username}
+                        .trxid.dataitems #{deposithistory[i].transaction_id}
+                        .depositamount.dataitems #{deposithistory[i].amount}
+                        .depositmethod.dataitems #{deposithistory[i].method}
+                        .depositdate.dataitems #{Number(deposithistory[i].date)}
+                        .depositedit.dataitems 
+                            button.btn.editbtn(id = "btn"+deposithistory[i].depositID) #{deposithistory[i].status}
+                - }
+        #popupcontainer 
+            #popupbox 
+                

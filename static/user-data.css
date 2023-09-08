@@ -1,0 +1,279 @@
+#maindiv{
+    background:none;
+}
+#container{
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+    overflow: auto;
+    height: fit-content;
+}
+#user{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+    background: #ecf0f3;
+    width: 95%;
+    height: 160vh;
+    border-radius: 30px;
+}
+.datatitle{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 2px;
+}
+.dataspan{
+    margin: 2px;
+}
+#info{
+    width: 25%;
+    margin-top: 10px;
+}
+#check{
+    font-size: 20px;
+    margin-top: 10px;
+}
+#userdata
+{
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+#avatar{
+    margin-left: 0%;
+    display: flex;
+    padding-top: 10px;
+    align-items: center;
+}
+#image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin-left: 5%;
+}
+.dataupbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 33%;
+    height: 100%;
+}
+.btn{
+    border: none;
+    padding: 8px 20px;
+    font-weight: bold;
+    margin-left: 5px;
+    border-radius: 10px;
+    color: #ecf0f3;
+    box-shadow: 7px 4px 8px #cbced1, -4px 7px 16px white;
+}
+.btn:hover{
+    opacity: 0.7;
+    transition: 5ms;
+}
+#select{
+    background: linear-gradient(rgb(25, 160, 25),rgb(133, 197, 133));
+}
+#cancel{
+    background: linear-gradient(rgb(236, 94, 58),rgb(236, 120, 120));
+}
+#histories{
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#historybtns{
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    background: #50a8ff;
+    color: white;
+    margin: 42px 0px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    width: 90%;
+}
+.historybtn{
+    align-items: center;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-right: 1px solid rgb(255, 255, 255);
+}
+#user-info{
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    background: white;
+    color: black;
+}
+#surveys{
+    border: none;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.historybtn:hover{
+    background: rgb(255, 255, 255);
+    color: black;
+    cursor: pointer;
+}
+#historybox{
+    width: 92%;
+    background: #ecf0f3;
+    border-radius: 20px;
+    height: 100%
+}
+.historypage{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.heading{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+.heading .dataitems{
+    font-size: 21px;
+}
+#deposithistories{
+    display: none;
+}
+.history{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+.dataitems{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 20px;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.editbtn{
+    width: 60%;
+    min-width: 75px;
+    height: 30px;
+    color: white;
+    padding: 0px;
+    border: none;
+    font-weight: bold;
+    margin-left: 5px;
+    border-radius: 10px;
+}
+.pendingbtn{
+    background: #f3f32d;
+}
+.approvedbtn{
+    background: linear-gradient(rgb(25, 160, 25),rgb(133, 197, 133));
+    
+}
+.rejectedbtn{
+    background: linear-gradient(rgb(236, 94, 58),rgb(236, 120, 120));
+    
+}
+.trxid{
+    width: 18%;
+}
+.depositamount{
+    width: 12%;
+}
+.depositmethod{
+    width: 15%;
+}
+.depositdate{
+    width: 15%;
+}
+.depositstatus{
+    width: 20%;
+}
+.depositedit{
+    width: 20%;
+}
+.withdrawlaccountname{
+    width: 16%;
+}
+.withdrawlaccountnumber{
+    width: 16%;
+}
+.withdrawlamount{
+    width: 12%;
+}
+.withdrawlmethod{
+    width: 12%;
+}
+.withdrawldate{
+    width: 14%;
+}
+.withdrawlstatus{
+    width: 15%;
+}
+.withdrawledit{
+    width: 15%;
+}
+.referralusername{
+    width: 15%;
+}
+.referraluserid{
+    width: 13%;
+}
+.referralavailbal{
+    width: 13%;
+}
+.referralaccount{
+    width: 15%;
+}
+.referralplan{
+    width: 16%;
+}
+.referralreferrals{
+    width: 10%;
+}
+.referraledit{
+    width: 18%;
+}
+#user-data{
+    display: flex;
+    flex-direction: row;
+}
+.databox{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    width: 33%;
+    height: 100%;
+}
+.boxofinput{
+    width: 90%;
+}
+.inputbox{
+    background: #ecf0f3;
+    width: 90%;
+    display: flex;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 50px;
+    margin: 10px 0px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;     
+}
+.inputbox input{
+    background: #ecf0f3;
+    border: none;
+    width: 80%;
+    outline: none;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-top: 6px;
+}

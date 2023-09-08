@@ -1,0 +1,81 @@
+extends account-base.pug
+
+block title
+    title Referrals
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/account-base.js" defer)
+    script(src="../static/referrals.js" defer)
+
+
+block link
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/account-base.css")
+    link(rel="stylesheet", href="../static/dashboard.css")
+    link(rel="stylesheet", href="../static/referrals.css")
+
+
+block content
+    div#container
+        #first-section
+            #referral-linkbox
+                .link-icon
+                    i(class= "fa fa-link")
+                .referral-stuff 
+                    //- p#referral-link-txt localhost:3000/register?referrerID=4567898
+                    p#referral-link-txt getsokay.com/register?referrerID=#{currentUser.referralID}
+                .copy-btn
+                    button(class = "copybtn" id = "copybtn" onclick = "oncopyLink()") #[i(class= "fa fa-clone")]
+                    
+            #referral-codebox
+                .link-icon#code-icon
+                    i(class="fa fa-code")
+                .referral-stuff 
+                    //- p#referral-code-txt 4567898
+                    p#referral-code-txt #{currentUser.referralID}
+                .copy-btn
+                    button(class = "copybtn" id = "copybtnid" onclick = "oncopyCode()") #[i#codecopy(class= "fa fa-clone")]
+
+            #referralsCount.balbox
+                #totaltext.baltext
+                    h4 Total Referrals
+                    //- h1 5 Users
+                    h1 #{currentUserRef.referralCount} Users
+                #totalicon.icon     
+                    i(class="fa fa-people-group")
+
+        #Referrals-Data 
+            table#table
+                thead
+                    th S/N
+                    th Username
+                    th Referred Users
+                    th Account
+                    th Plan
+                tbody
+                    - for(let i=0; i<referrals.length; i++)
+                        tr
+                            td=i+1
+                            td=referrals[i].username
+                            td=referrals[i].referralCount
+                            td=referrals[i].account
+                            td=referrals[i].plan
+            - if(referrals.length===0)
+                p#noreferrals You don't have any referral
+                    //- tr
+                    //-     td 1
+                    //-     td 23443
+                    //-     td sahil
+                    //-     td PENDING
+                    //- tr
+                    //-     td 2
+                    //-     td 23464
+                    //-     td latif
+                    //-     td PENDING
+                    //- tr
+                    //-     td 3
+                    //-     td 3478
+                    //-     td arslan
+                    //-     td PENDING

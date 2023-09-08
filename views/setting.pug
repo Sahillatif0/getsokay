@@ -1,0 +1,81 @@
+extends account-base.pug
+
+block title
+    title Setting
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/setting.js" defer)
+
+block link
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css")
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/account-base.css")
+    link(rel="stylesheet", href="../static/setting.css")
+
+
+
+block content
+    div#container
+        #SettingPage  
+            #side-options 
+                #heading
+                    h1 Setting 
+                ul 
+                    #profile.settingmenu
+                        li Profile
+                    #privacy.settingmenu 
+                        li Privacy Setting 
+                    #Adavnced.settingmenu
+                        li Advanced 
+            #option-data
+                #profile-data(avatar=currentUser.avatar) 
+                    #data-leftside 
+                        #avatar
+                            #image 
+                            i(class="fa fa-pen" onclick="changeavatar()")
+                        #otherdata
+                            label(for="userID-field") UserID: 
+                            #userIDbox.inputbox 
+                                input(type="Number" id="userID-field" name = "UserID" readonly value=currentUser.userID) 
+                            label(for="username-field") Username: 
+                            #usernamebox.inputbox
+                                input(type="text" id="username-field" name = "username" readonly value=currentUser.username) 
+                            label(for="name-field") Name: 
+                            #namebox.inputbox 
+                                input(type="text" id="name-field" name = "name" readonly value=currentUser.name) 
+                                i#name-i(class="fa fa-pen")
+                    #data-rightside
+                        #otherinputs
+                            label(for="email-field") Email:
+                            #emailbox.inputbox 
+                                input(type="email" id="email-field" name = "email" readonly value=currentUser.email) 
+                                i#email-i(class="fa fa-pen")
+                            label(for="phone-field") Phone Number:
+                            - let phonenumber = currentUser.phone.replace(currentUser.countrycode,`+(${currentUser.countrycode})`);
+                            #phonebox.inputbox 
+                                input(type="text" id="phone-field" name = "phone" readonly value=phonenumber)
+                        #button
+                            button.btn(id=`select` type="button" onclick="onSave()") Save
+        #Avatars
+            #heading 
+                h1 Select Avatar
+            #avatarspic 
+                .avatars-4
+                    #0.avatar
+                    #1.avatar
+                    #2.avatar
+                    #3.avatar
+                .avatars-4
+                    #4.avatar
+                    #5.avatar
+                    #6.avatar
+                    #7.avatar
+                .avatars-4
+                    #8.avatar
+                    #9.avatar
+                    #10.avatar
+            #buttons
+                button.btn(id=`select` type="button" onclick="onSelect()") Select 
+                button.btn(id=`cancel` type="button" onclick="onCancel()") Cancel

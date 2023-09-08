@@ -1,0 +1,83 @@
+doctype html
+html
+    head 
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        block title
+        block scripts
+            script(src="../static/bootstrap.bundle.min.js")
+            script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+            script(src="../static/base.js")
+            script(src="../static/account-base.js")
+            script(src="../static/dashboard.js")
+        block link
+            link(rel="stylesheet", href="../static/bootstrap.min.css")
+            link(rel="stylesheet", href="../static/base.css")
+            link(rel="stylesheet", href="../static/account-base.css")
+    body
+        block maindiv
+            #mainfdiv.row
+                #sidebardiv.col-1
+                    input#hamburger-input.burger-shower(type='checkbox' onclick="onCheckedDesk()")
+                    label#hamburger-menu(for='hamburger-input')
+                        nav#sidebar-menu
+                            i#desk(class="fa fa-bars")
+                            ul
+                                div.menu
+                                    a(href = "/dashboard") #[i(class="fa fa-home")] 
+                                    li #[a(href = "/dashboard" id = "btn1") Dashboard]
+                                div.menu
+                                    a(href = "/referrals") #[i(class="fa fa-users")] 
+                                    li #[a(href = "/referrals") Referrals]
+                                div#earnmenu.menu
+                                    i#earnmenu-i(class="fa-solid fa-money-check-dollar")
+                                    li#earnmenu-li(onclick="onSubmenu()") EarnMore
+                                    #submenu
+                                        div.submenu
+                                            a(href = "/viewads") #[i(class="fa-solid fa-eye")] 
+                                            li #[a(href = "/viewads") ViewAds]
+                                        div.submenu
+                                            a(href = "/yourads") #[i(class="fa-solid fa-circle-plus")] 
+                                            li #[a(href = "/yourads") YourAds]
+                                        div.submenu
+                                            a(href = "/surveys") #[i(class="fa-solid fa-square-poll-vertical")] 
+                                            li #[a(href = "/surveys") Surveys]
+                                div.menu
+                                    a(href = "/leaderboard") #[i(class="fa-solid fa-medal")]
+                                    li #[a(href = "/leaderboard") Leaderboard]
+                                div.menu
+                                    a(href = "/deposit") #[i(class="fa fa-credit-card-alt")] 
+                                    li #[a(href = "/deposit") Deposit]
+                                div.menu
+                                    a(href = "/withdrawl") #[i(class="fa fa-money")] 
+                                    li #[a(href = "/withdrawl") Withdraw]
+                                div.menu
+                                    a(href = "/packages") #[i(class="fa fa-server")] 
+                                    li #[a(href = "/packages") Packages]
+                                div.menu
+                                    a(href = "/help") #[i(class="fa fa-question-circle")] 
+                                    li #[a(href = "/help") Help]
+                                div.menu
+                                    a(href = "/setting") #[i(class="fa fa-cog")] 
+                                    li #[a(href = "/setting") Setting]
+                                div.menu
+                                    a(href = "/logout") #[i(class="fa fa-sign-out")] 
+                                    li #[a(href = "/logout") Logout]
+
+
+                #contentdiv.col-11
+                    nav#navbar
+                        input#hamburger(type='checkbox' onclick="onCheckedMob()")
+                        i#hamburgeri(class="fa fa-bars" for='hamburger')
+                        .navbartextbox#t1 
+                            h2.navbartext GetsOkay | Earn Free Money
+                        .profile 
+
+                            p#name #{currentUser.username} 
+                            i(class="fa fa-user-circle-o")
+                            i(class="fa fa-bell") 
+                
+                    #content
+                        block content
+                    footer
+                    div#footerbox
+                        | Copyright 2022 - Ourwebsite.com | All Rights Reserved   

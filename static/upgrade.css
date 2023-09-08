@@ -1,0 +1,204 @@
+html {
+    overflow: hidden;
+}
+
+#box {
+    top: 60px;
+}
+
+.boxee {
+    margin: 5px;
+    width: 260px;
+}
+
+.boxee input,
+.boxee select {
+    font-weight: bold;
+
+}
+
+form select {
+    background: #ecf0f3;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-top: 6px;
+}
+
+#method-logo-i {
+    font-size: 60px;
+    margin: 18px;
+    margin-top: 23px;
+    color: darkslategray;
+}
+
+#confirmationPopup {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+#confirmationPopup::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.popup {
+    width: 390px;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background: #ecf0f3;
+    box-shadow: 2px 2px 2px 2px rgb(83, 82, 82);
+}
+.details {
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bold;
+}
+
+#inf {
+    height: 20%;
+    color: #00dda6;
+    align-items: center;
+    text-align: center;
+}
+
+#pkg {
+    height: 12%;
+}
+
+#pkgdur {
+    height: 12%;
+}
+
+#availamo {
+    height: 12%;
+}
+
+#totamo {
+    height: 20%;
+    font-size: large;
+}
+
+#btns {
+    height: 24%;
+    margin-bottom: 7px;
+}
+
+.confirmbtn {
+    width: 40%;
+}
+
+#confirm {
+    background: linear-gradient(45deg, #71ef81, #00dda6);
+}
+
+#cancel {
+    background: linear-gradient(45deg, #ef7171, #dd2900);
+}
+#statusmessage{
+    --messcolor: #00dda6;
+    display: none;
+    width: 350px;
+    height: 38%;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    /* stroke: #00dda6; */
+    stroke: var(--messcolor);
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+}
+
+.checkmark {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 4;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 10% auto;
+    box-shadow: inset 0px 0px 0px var(--messcolor);
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0
+    }
+}
+
+@keyframes scale {
+
+    0%,
+    100% {
+        transform: none
+    }
+
+    50% {
+        transform: scale3d(1.1, 1.1, 1)
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 70px var(--messcolor);
+    }
+}
+#statusmes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 0px 25px;
+    text-align: center;
+    margin-top: -15px;
+}
+#statusbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#thankyou{
+    width: 80%;
+    background: linear-gradient(45deg, #71ef81, #00dda6);
+}
+@media only screen and (max-width: 600px){
+    .popup{width: 340px;}
+    #statusmessage{width: 300px;}
+
+
+}

@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu';
+}
+#maincontainer{
+    display: flex;
+    flex-direction: column;
+}
+#navbox {
+    display: flex;
+    background-color: #212044;
+    box-shadow: 0 -2px 5px #000;
+    height: 60px;
+    width: 100vw;
+    align-items: center;
+}
+
+#logo {
+    color: #eaebf5;
+    font-weight: bold;
+    margin-left: 60px;
+    font-family: 'Ubuntu';
+}
+
+#navbar {
+    position: absolute;
+    right: 50px;
+}
+
+#navbar ul {
+    display: flex;
+}
+
+#navbar li {
+    list-style: none;
+}
+
+li a {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 18px 20px;
+
+}
+
+li a:hover,
+.active {
+    transition: 1s;
+    opacity: 0.7;
+}
+
+#footerbox {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    padding-top: 8px;
+    background-color: #212044;
+    color: #eaebf5;
+}
+
+#hamburgeri {
+    display: none;
+}
+
+#hamburger {
+    opacity: 0;
+    width: 51px;
+    height: 44px;
+    position: absolute;
+    top: 13px;
+    right: 18px;
+    display: none;
+}
+
+@media only screen and (max-width: 870px) {
+    #navbox #logo {
+        margin-left: 30px;
+        font-size: 18px;
+    }
+
+    #navbar {
+        display: none;
+        background: #212044;
+        top: 60px;
+        right: 0px;
+        left: 0px;
+        border: 2px solid;
+    }
+
+    #navbar ul {
+        flex-direction: column;
+    }
+    #navbar li {
+        border-bottom: 1px solid #423c78;
+        width: 100vw;
+    }
+    #navbar li a {
+        display: block;
+    color: #eaebf5;
+    padding: 17px 34px;
+    padding-right: 193px;
+
+    }
+
+    #hamburgeri {
+        position: absolute;
+        font-size: 24px;
+        right: 14px;
+        color: #eaebf5;
+        top: 17px;
+        z-index: 0;
+        display: inline;
+    }
+
+    #hamburger {
+        z-index: 1;
+        display: inline;
+    }
+
+
+
+}

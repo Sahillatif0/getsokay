@@ -1,0 +1,30 @@
+extends base.pug
+
+block title
+    title Verify OTP
+
+block scripts 
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/verifyotp.js")
+    script(src="../static/base.js")
+
+block link
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/form.css")
+
+
+block content 
+    div#container
+        div#box
+            #method-name Verify Email 
+            #info We have sent you a code to your email address. Please type here to verify your email.
+            form(action="/verifyotp", method="post", id="otp-form") 
+                #otpbox.boxee
+                    i(class="fa-solid fa-keyboard")
+                    input(name="otp" type="number" id="otp" placeholder="Enter Code")
+                    button#resend.actionupbtn(type="button" onclick="onresendOTP()") Resend
+                        
+                button(class="btn" type="button" onclick="onSubmitOTP()") Submit
+        #errorbox
+            p#error

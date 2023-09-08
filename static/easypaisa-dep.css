@@ -1,0 +1,281 @@
+#container{
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    overflow-x: hidden;
+    justify-content: space-evenly;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+#depositdetails{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    min-width: 380px;
+    height: 180px;
+    background: #ecf0f3;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+#depositdetails p{
+    padding-top: 3px;
+}
+#form{
+    margin-top: 45px;
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+#method-logo{
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+}
+#method-logo img{
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+}
+#method-name {
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: #6ad173;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+form{
+    text-align: left;
+    margin-top: 30px;
+}
+.boxee, .btn {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+  }
+input::placeholder {
+    color: gray;
+}
+.boxee{
+    background: #ecf0f3;
+    padding: 15px;
+    padding-left: 20px;
+    height: 50px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;     
+}
+form input{
+    background: #ecf0f3;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding-left: 10px;
+}
+button {
+    color: white;
+    margin-top: 20px;
+    background: #1DA1F2;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+  }
+  
+  button:hover {
+    box-shadow: none;
+  }
+  #TrxID{
+    padding-left: 13px;
+  }
+#errorbox{
+    position: absolute;
+    top: 70px;
+    right: 25px;
+    background: #d14343;
+    border-radius: 10px;
+}
+#error{
+    font-size: 13px;
+    margin-top: 3px;
+    color: #ecf0f3;
+    font-weight: bold;
+}
+  /* #error{
+    position: absolute;
+    padding: 30px;
+    border: 2px solid black;
+    right: 100px;
+    text-align: center;
+    font-size: 14px;
+  } */
+  #confirmationPopup {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+#confirmationPopup::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: 0.5;
+    z-index: -1;
+}
+  #statusmessage{
+    --messcolor: #00dda6;
+    flex-direction: column;
+    border-radius: 20px;
+    background: #ecf0f3;
+    box-shadow: 2px 2px 2px 2px rgb(83, 82, 82);
+    display: flex;
+    width: 350px;
+    height: 38%;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    /* stroke: #00dda6; */
+    stroke: var(--messcolor);
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+}
+
+.checkmark {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 4;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 10% auto;
+    box-shadow: inset 0px 0px 0px var(--messcolor);
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0
+    }
+}
+
+@keyframes scale {
+
+    0%,
+    100% {
+        transform: none
+    }
+
+    50% {
+        transform: scale3d(1.1, 1.1, 1)
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 70px var(--messcolor);
+    }
+}
+#statusmes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 0px 25px;
+    text-align: center;
+    margin-top: -15px;
+}
+#statusbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#thankyou{
+    width: 80%;
+    background: linear-gradient(45deg, #71ef81, #00dda6);
+}
+@media only screen and (max-width: 950px){
+    #container{
+    flex-direction: column;
+    justify-content: center;
+    }
+    #depositdetails{
+        width: 70%;
+        min-width: 330px;
+    }
+
+}
+@media only screen and (max-width: 600px){
+    #container{
+        width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    }
+#depositdetails {
+    margin-top: 20px;
+    width: 80%;
+    min-width: unset;
+    height: auto;
+}
+#form{
+    width: 100%;
+    max-width: 350px;
+}
+form input{
+    width: 77%;
+}
+form input::placeholder{
+    font-size: calc(7px + 100vw/70);
+}
+.boxee{
+    padding: 16px;
+}
+#FREEBOX{
+    height: 300px;
+    width: 100%;
+    position: relative;
+}
+#statusmessage{width: 300px;}
+}

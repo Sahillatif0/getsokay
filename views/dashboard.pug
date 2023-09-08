@@ -1,0 +1,70 @@
+extends account-base.pug
+
+block title
+    title Dashboard
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/account-base.js" defer)
+    script(src="../static/dashboard.js" defer)
+
+block link
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/account-base.css")
+    link(rel="stylesheet", href="../static/dashboard.css")
+    link(rel="stylesheet", href="../static/adashboard.css")
+
+
+block content
+    #bigbox(account=currentUser.account)
+        #accountstatusbox 
+            #iconbox
+                i(class="fa-solid fa-circle-info")
+            #timebox
+                p#time(createdAt=(currentUser.createdAt-0))
+            #buttonbox
+                button#activatebtn(onclick="activateaccount()") Activate Account
+    #boxes
+        #AvailBal.balbox.col-4
+            #availtext.baltext
+                h4 Available Balance
+                h1.balance(data-target=Number(currentUser.availableBalance)) 0
+            #availicon.icon     
+                i(class= "fa fa-diamond")
+        
+        #TotalBal.balbox.col-4
+            #totaltext.baltext
+                h4 Total Earned
+                h1.balance(data-target=Number(currentUser.availableBalance)+Number(currentUser.withdrawnBalance)) 0
+            #totalicon.icon     
+                i(class= "fa fa-money")
+
+        #withdrawBal.balbox.col-4
+            #withdrawtext.baltext
+                h4 Withdrawn Balance
+                h1.balance(data-target=Number(currentUser.withdrawnBalance)) 0
+            #withdrawicon.icon     
+                i(class= "fa fa-credit-card-alt")
+        #referralBal.balbox.col-4
+            #referraltext.baltext
+                h4 Earn By Referrals
+                h1.balance(data-target=Number(currentUser.withdrawnBalance)) 0
+            #referralicon.icon     
+                i(class= "fa fa-users")
+    #ActivityPortion 
+        #Activitiesbox
+            h1 Activities
+            .activity 
+                .type.textbox 
+                    p Referral Activity
+                .info.textbox
+                    p Name
+                .date.textbox
+                    p 12 Oct 2022
+                .status.textbox
+                    p Account Verified
+                .amount.textbox
+                    p 0.2 GOT
+
+        

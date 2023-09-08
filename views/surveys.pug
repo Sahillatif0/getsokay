@@ -1,0 +1,24 @@
+extends account-base.pug
+
+block title
+    title Surveys
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/dashboard.js")
+
+block link
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/account-base.css")
+    link(rel="stylesheet", href="../static/surveys.css")
+
+
+
+block content
+    div#container
+        #SurveyPage  
+            #cpx_research 
+                iframe(width="80%" frameBorder="0" height="1000px"  src=`https://offers.cpx-research.com/index.php?app_id=12700&ext_user_id=${currentUser.username}&secure_hash=undefined&username=${currentUser.username}&email=${currentUser.email}&subid_1=&subid_2`)
+                //- a(href="") #[#checksurvey Check Survey] 
+            

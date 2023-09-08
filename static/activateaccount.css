@@ -1,0 +1,16 @@
+#form{
+    margin: auto;
+    left: 0px;
+    top: -70px;
+}
+#resend{
+    color: green;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    background: none;
+    box-shadow: none;
+    margin: 0;
+    height: 23px;
+    margin-left: 10px;
+}

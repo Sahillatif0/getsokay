@@ -1,0 +1,138 @@
+
+#boxes{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.balbox{
+    display: flex;
+    border-radius: 10px;
+    width: 40%;
+    min-width: 300px;
+    height: 140px;
+    background: white;
+    color: #2e2c2c;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    transition: 3s;
+    /* box-shadow: 4px 3px 7px 2px #a79b9b; */
+    margin-top: 30px;
+    margin-left: 2%;
+}
+
+.baltext{
+    position: relative;
+    top: -10px
+}
+.baltext h4{
+    color: #807e7e;
+    margin-left: 32px;
+    font-size: 15px;
+}
+.baltext h1{
+    font-size: 34px;
+    margin-left: 36px;
+}
+.icon{
+    border: 4px solid white;
+    border-radius: 50px;
+    padding: 18px;
+    color: white;
+}
+.icon i{
+    font-size: calc(2rem + 2vw);
+}
+#availicon{
+    padding-top: 28px;
+    background: linear-gradient(45deg, #ef7171, #dd2900);
+}
+#availicon i{
+    font-size: calc(1.4rem + 2vw);
+}
+
+#totalicon{
+    background: linear-gradient(45deg, #cfef71, #ddb200);
+}
+#withdrawicon{
+    background: linear-gradient(45deg, #71ef81, #00dda6);
+}
+#newusericon{
+    background: linear-gradient(45deg, #7195ef, #9b00dd);
+}
+#ActivityPortion{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+#Activitiesbox{
+    display: flex;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+
+}
+@media only screen and (max-width: 1000px){
+.baltext h4{
+    font-size: 12px;
+}
+}
+@media only screen and (max-width: 800px){
+.baltext h1{
+    font-size: 24px;
+}
+.baltext h4{
+    font-size: 11px;
+}
+}
+@media only screen and (max-width: 600px){
+    #boxes{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+    }
+    .balbox{
+        width: 75%;
+        justify-content: space-around;
+        margin-top: 16px;
+        margin-left: 0px;
+        min-width: 270px;
+    }
+    #AvailBal{
+        margin-left: 0px;
+        margin-top: 50px;
+    }
+    /* #TotalBal{
+        left: 35px;
+        top: 220px;
+    }
+    #withdrawBal{
+        left: 35px;
+        top: 390px;
+    } */
+    .baltext h4 {
+        margin-left: 17px;
+        font-size: 19px;
+  }
+  .baltext h1 {
+    margin-left: 23px;
+    font-size: 30px;
+}
+#availicon i{
+    font-size: 50px;
+}
+#withdrawicon i{
+    font-size: 40px;
+}
+#totalicon i{
+    font-size: 40px;
+}
+#totalicon{
+    margin-left: 5px;
+}
+}

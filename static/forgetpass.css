@@ -1,0 +1,20 @@
+.boxee{
+    display: flex;
+}
+.boxee i{
+    margin-top: 7px;
+}
+.boxee input{
+    padding-left: 8px;
+    padding-top: 1px;
+    width: 63%;
+}
+#check{
+    margin: 0px;
+    height: 33px;
+}
+#already a{
+    color: rgb(74, 207, 125);
+    font-weight: bold;
+    text-decoration: none;
+}

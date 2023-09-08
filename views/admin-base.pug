@@ -1,0 +1,76 @@
+doctype html
+html
+    head 
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        block title
+        block scripts
+            script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+            script(src="../static/dashboard.js" defer)
+            script(src="../static/admin-base.js" defer)
+        block link
+            link(rel="stylesheet", href="../static/admin-base.css")
+    body
+        block maindiv
+            #maindiv
+                #sidebardiv
+                    input#hamburger-input.burger-shower(type='checkbox' onclick="onCheckedDesk()")
+                    label#hamburger-menu(for='hamburger-input')
+                        nav#sidebar-menu
+                            i#desk(class="fa fa-bars")
+                            ul
+                                div.menu
+                                    a(href = "/admin/dashboard") #[i(class="fa fa-home")] 
+                                    li #[a(href = "/admin/dashboard" id = "btn1") Dashboard]
+                                div.menu
+                                    a(href = "/admin/users") #[i(class="fa fa-users")] 
+                                    li #[a(href = "/admin/users") Referrals]
+                                div#earnmenu.menu
+                                    i#earnmenu-i(class="fa-solid fa-money-check-dollar")
+                                    li#earnmenu-li(onclick="onSubmenu()") EarnMore
+                                    #submenu
+                                        div.submenu
+                                            a(href = "/viewads") #[i(class="fa-solid fa-eye")] 
+                                            li #[a(href = "/viewads") ViewAds]
+                                        div.submenu
+                                            a(href = "/yourads") #[i(class="fa-solid fa-circle-plus")] 
+                                            li #[a(href = "/yourads") YourAds]
+                                        div.submenu
+                                            a(href = "/surveys") #[i(class="fa-solid fa-square-poll-vertical")] 
+                                            li #[a(href = "/surveys") Surveys]
+                                div.menu
+                                    a(href = "/admin/leaderboard") #[i(class="fa-solid fa-medal")]
+                                    li #[a(href = "/admin/leaderboard") Leaderboard]
+                                div.menu
+                                    a(href = "/admin/deposit") #[i(class="fa fa-credit-card-alt")] 
+                                    li #[a(href = "/admin/deposit") Deposit]
+                                div.menu
+                                    a(href = "/admin/withdrawl") #[i(class="fa fa-money")] 
+                                    li #[a(href = "/admin/withdrawl") Withdraw]
+                                div.menu
+                                    a(href = "/admin/packages") #[i(class="fa fa-server")] 
+                                    li #[a(href = "/admin/packages") Packages]
+                                div.menu
+                                    a(href = "/admin/help") #[i(class="fa fa-question-circle")] 
+                                    li #[a(href = "/admin/help") Help]
+                                div.menu
+                                    a(href = "/admin/setting") #[i(class="fa fa-cog")] 
+                                    li #[a(href = "/admin/setting") Setting]
+                                div.menu
+                                    a(href = "/logout") #[i(class="fa fa-sign-out")] 
+                                    li #[a(href = "/logout") Logout]
+
+
+                #contentdiv
+                    nav#navbar 
+                        input#hamburger(type='checkbox' onclick="onCheckedMob()")
+                        i#hamburgeri(class="fa fa-bars" for='hamburger')
+                        .navbartextbox#t1 
+                            h2.navbartext GetsOkay | Admin Panel
+                        .profile 
+
+                            p#name Sahil Latif
+                            i(class="fa fa-user-circle-o")
+                            i(class="fa fa-bell") 
+                
+                    #content
+                        block content 

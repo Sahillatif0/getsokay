@@ -1,0 +1,52 @@
+extends base.pug
+
+block title
+    title Register
+
+block scripts 
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/register-referral.js" defer)
+    script(src="../static/register.js" defer)
+    script(src="../static/base.js" defer)
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js" defer)
+
+block link
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css")
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/form.css")
+    
+
+
+block content 
+    div#container
+        div#box
+            #method-logo
+                img(src="../static/images/easypaisa.png", alt="easypaisa")
+            #method-name Create Your Account
+            form(action="/registers", method="post", id="register-form") 
+                #usernamebox.boxee
+                    i(class="fa-solid fa-user")
+                    input(name="username" type="text" id="username" placeholder="Enter Your Username")
+                #namebox.boxee
+                    i(class="fa-regular fa-id-badge")
+                    input(name="name" type="text" id="name" placeholder="Enter Your Full Name")
+                #emailbox.boxee
+                    i(class="fa-solid fa-at")
+                    input(name="email" type="email" id="email" placeholder="Enter Your Email")
+                #phonebox.boxee
+                    input(name="phone" type="number" id="phone" placeholder="Enter Your Phone Number")
+                #passwordbox.boxee
+                    i(class="fa-solid fa-key")
+                    input(name="password" type="password" id="password" placeholder="Enter Your Password")
+                #cpasswordbox.boxee
+                    i(class="fa-solid fa-key")
+                    input(name="confirmpassword" type="password" id="confirmpassword" placeholder="Confirm Your Password")
+                #referrerIDbox.boxee
+                    i(class="fa-solid fa-user-group")
+                    input(name="referrerID" type="Number" id="referrerID" placeholder="Enter Referral Code (Optional)") 
+                button(class="btn" type="button" onclick="onSubmitData()") SignUp
+            p#referrerIDhidden #{referrerID}
+            p#already Already have an account? #[a.pagetransfer(href="/login") Login] 
+        #errorbox
+            p#error

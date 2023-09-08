@@ -1,0 +1,82 @@
+#container{
+    --size: calc(12px + 1vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    overflow-x: hidden;
+}
+#userrank{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    transition: 2s;
+}
+.box{
+    width: 13vw;
+    height: 5vw;
+    margin: 1vw;
+    background-color: rgb(243, 243, 243);
+    color: #212044;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+.box h3, .box h1{
+    text-align: center;
+}
+.box h1{
+    font-size: var(--size);
+}
+.box h3{
+    font-size: calc(var(--size) - 5px);
+}
+#leaderboard{
+    margin-top: 70px;
+    width: 83%;
+    transition: 2s;
+}
+
+#table{
+    width: 100%;
+    border: 1px;
+    font-size: 18px;
+}
+thead{
+    background-color: #212044;
+    color: #eaebf5;
+}
+tbody{
+    background-color: #e2e2e7;
+    color: #000000;
+    text-align: center;
+    
+}
+thead th{
+    padding: 10px;
+}
+tbody td{
+    padding: 7px;
+}
+
+#FREEBOX{
+    height: 300px;
+    width: 100%;
+    position: relative;
+}
+
+@media only screen and (max-width: 600px){
+    #container{
+        width: 100vw;
+        justify-content: center;
+    }
+    .box{
+        width: 20%;
+        height: 5%;
+        margin: 1vw;
+    }
+    #leaderboard{
+        overflow: auto;
+    }
+
+}

@@ -1,0 +1,174 @@
+extends admin-base.pug
+
+block title
+    title User Data 
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/user-data.js" defer)
+
+block link
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/admin-base.css")
+    link(rel="stylesheet", href="../static/user-data.css")
+
+
+
+block content
+    div#container
+        #user
+            #userdata
+                #avatar.dataupbox
+                    #image(avatar=user.avatar)
+                #info.dataupbox
+                    p.datatitle User ID:  
+                    p.datatitle Username:  
+                    p.datatitle Name:  
+                    p.datatitle Available Balance:  
+                    p.datatitle Withdrawn Balance:  
+                    p.datatitle Plan:  
+                #check.dataupbox
+                    span.dataspan#userID #{user.userID} 
+                    span.dataspan #{user.username} 
+                    span.dataspan #{user.name} 
+                    span.dataspan #{user.availableBalance} 
+                    span.dataspan #{user.withdrawnBalance} 
+                    span.dataspan #{user.plan} 
+                #buttons.dataupbox 
+                    button.btn(id=`select` type="button" onclick="onSave()") Save 
+                    button.btn(id=`cancel` type="button" onclick="onCancel()") Cancel
+            #histories 
+                #historybtns
+                    #user-info.historybtn(onclick="onShowUserData()") User Info
+                    .historybtn(onclick="onShowDepositData()") Deposits
+                    .historybtn(onclick="onShowWithdrawlData()") Withdrawls
+                    .historybtn(onclick="onShowReferralsData()") Referrals
+                    #surveys.historybtn(onclick="onShowSurveysData()") Surveys
+                #historybox
+                    #user-data.historypage
+                        #important-data.databox
+                            .boxofinput
+                                label(for="userID-field") UserID: 
+                                #userIDbox.inputbox 
+                                    input.input(type="Number" id="userID-field" name = "userID" readonly value=user.userID)
+                                label(for="username-field") Username: 
+                                #usernamebox.inputbox
+                                    input.input(type="text" id="username-field" name = "username" readonly value=user.username)
+                                label(for="name-field") Name: 
+                                #namebox.inputbox 
+                                    input.input(type="text" id="name-field" name = "name" readonly value=user.name)
+                                label(for="email-field") Email: 
+                                #emailbox.inputbox 
+                                    input.input(type="email" id="email-field" name = "email" readonly value=user.email)
+                                label(for="phone-field") Phone Number: 
+                                #phonebox.inputbox
+                                    input.input(type="text" id="phone-field" name = "phone" readonly value=user.phone)
+                                label(for="emailstatus-field") Email Status: 
+                                #emailstatusbox.inputbox 
+                                    input.input(type="text" id="emailstatus-field" name = "emailstatus" readonly value=user.emailStatus)
+                        #extra-data.databox
+                            .boxofinput
+                                label(for="account-field") Account Status: 
+                                #accountbox.inputbox 
+                                    input.input(type="Nummber" id="account-field" name = "account" readonly value=user.account)
+                                label(for="plan-field") Plan: 
+                                #planbox.inputbox
+                                    input.input(type="text" id="plan-field" name = "plan" readonly value=user.plan)
+                                label(for="createdAt-field") Created At: 
+                                #createdAtbox.inputbox 
+                                    input.input(type="text" id="createdAt-field" name = "createdAt" readonly value=user.createdAt)
+                                label(for="availableBalance-field") Available Balance: 
+                                #availableBalancebox.inputbox 
+                                    input.input(type="text" id="availableBalance-field" name = "availableBalance" readonly value=user.availableBalance)
+                                label(for="withdrawnBalance-field") Withdrawn Balance: 
+                                #withdrawnBalancebox.inputbox
+                                    input.input(type="text" id="withdrawnBalance-field" name = "withdrawnBalance" readonly value=user.withdrawnBalance)
+                                label(for="depositedBalance-field") Deposited Balance: 
+                                #depositedBalancebox.inputbox 
+                                    input.input(type="text" id="depositedBalance-field" name = "depositedBalance" readonly value=user.depositedBalance)
+                        #other-data.databox
+                            .boxofinput
+                                label(for="referralID-field") Referral ID: 
+                                #referralIDbox.inputbox 
+                                    input.input(type="Number" id="referralID-field" name = "referralID" readonly value=user.referralID)
+                                label(for="referrerID-field") Referrer ID: 
+                                #referrerIDbox.inputbox
+                                    input.input(type="text" id="referrerID-field" name = "referrerID" readonly value=user.referrerID)
+                                label(for="referralCount-field") Referral Count: 
+                                #referralCountbox.inputbox 
+                                    input.input(type="text" id="referralCount-field" name = "referralCount" readonly value=user.referralCount)
+                    #deposithistories.historypage
+                        .heading
+                            .trxid.dataitems Trx_id
+                            .depositamount.dataitems Amount
+                            .depositmethod.dataitems Method
+                            .depositdate.dataitems Date
+                            .depositstatus.dataitems Status
+                            .depositedit.dataitems Edit
+                        - if(userDeposits.length==0){
+                            p.nodata No deposit data to show
+                        - }
+                        - else{
+                        - for(let i=(userDeposits.length-1); i>=0; i--)
+                            .deposits.history(id = userDeposits[i].depositID)
+                                .trxid.dataitems #{userDeposits[i].transaction_id}
+                                .depositamount.dataitems #{userDeposits[i].amount}
+                                .depositmethod.dataitems #{userDeposits[i].method}
+                                .depositdate.dataitems #{Number(userDeposits[i].date)}
+                                .depositstatus.dataitems #{userDeposits[i].status}
+                                .depositedit.dataitems 
+                                    button.btn.editbtn(id = userDeposits[i].depositID) #{userDeposits[i].status}
+                        - }
+                    #withdrawhistories.historypage
+                        .heading
+                            .withdrawlaccountname.dataitems Name
+                            .withdrawlaccountnumber.dataitems Number
+                            .withdrawlamount.dataitems Amount
+                            .withdrawlmethod.dataitems Method
+                            .withdrawldate.dataitems Date
+                            .withdrawlstatus.dataitems Status
+                            .withdrawledit.dataitems Edit
+                        - if(userWithdrawls.length==0){
+                            p.nodata No withdrawls to show
+                        - }
+                        - else{
+                        - for(let i=(userWithdrawls.length-1); i>=0; i--)
+                            .withdrawls.history(id = userWithdrawls[i].withdrawID)
+                                .withdrawlaccountname.dataitems #{userWithdrawls[i].Account_Name}
+                                .withdrawlaccountnumber.dataitems #{userWithdrawls[i].Account_Number}
+                                .withdrawlamount.dataitems #{userWithdrawls[i].amount}
+                                .withdrawlmethod.dataitems #{userWithdrawls[i].method}
+                                .withdrawldate.dataitems #{Number(userWithdrawls[i].date)}
+                                .withdrawlstatus.dataitems #{userWithdrawls[i].status}
+                                .withdrawledit.dataitems 
+                                    button.btn.editbtn(id = userWithdrawls[i].withdrawID) #{userWithdrawls[i].status}
+                        - }
+                    #referralshistories.historypage
+                        .heading
+                            .referralusername.dataitems Username
+                            .referraluserid.dataitems User ID
+                            .referralavailbal.dataitems Balance
+                            .referralaccount.dataitems Account
+                            .referralplan.dataitems Plan
+                            .referralreferrals.dataitems Referrals
+                            .referraledit.dataitems Edit
+                        - if(userReferrals.length==0){
+                            p.nodata No referrals to show
+                        - }
+                        - else{
+                        - for(let i=(userReferrals.length-1); i>=0; i--)
+                            .referrals.history(id = userReferrals[i].userID)
+                                .referralusername.dataitems #{userReferrals[i].username}
+                                .referraluserid.dataitems #{userReferrals[i].userID}
+                                .referralavailbal.dataitems #{userReferrals[i].availableBalance}
+                                .referralaccount.dataitems #{userReferrals[i].account}
+                                .referralplan.dataitems #{userReferrals[i].plan}
+                                .referralreferrals.dataitems #{userReferrals[i].referralCount}
+                                .referraledit.dataitems 
+                                    button.btn.editbtn(id = userReferrals[i].userID) #{userReferrals[i].status}
+                        - }
+                    #surveyshistories.historypage
+        #errorbox
+            p#error
+        #FREEBOX

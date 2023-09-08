@@ -1,0 +1,56 @@
+#maindiv{
+    background: #e6e6e6;
+}
+.balbox{
+    width: 40%;
+    min-width: 400px;
+    background: white !important;
+    color: #2e2c2c;
+    justify-content: space-between;
+}
+.icon{
+    border: 8px solid white;
+    border-radius: 50%;
+    padding: 22px;
+    color: white;
+    /* padding-top: 23px; */
+}
+.icon i{
+    font-size: calc(1.6rem + 2vw);
+}
+#availicon{
+    background: linear-gradient(45deg, #ef7171, #dd2900);
+    padding-bottom: 17px;
+}
+#withdrawicon{
+    background: linear-gradient(45deg, #cfef71, #ddb200);
+}
+#totalicon{
+    background: linear-gradient(45deg, #71ef81, #00dda6);
+}
+#referralicon{
+    background: linear-gradient(45deg, #7195ef, #9b00dd);
+    padding: 25px 21px;
+}
+#availicon i{
+    font-size: calc(2.34rem + 2vw);
+}
+#referralicon i{
+    font-size: calc(1.4rem + 2vw);
+}
+
+.baltext h4{
+    color: #807e7e;
+    margin-left: 32px;
+    font-size: 15px;
+}
+.baltext h1{
+    font-size: 34px;
+    margin-left: 36px;
+}
+@media only screen and (max-width: 600px){
+    .balbox{
+        width: 80%;
+        min-width: 290px
+    }   
+}

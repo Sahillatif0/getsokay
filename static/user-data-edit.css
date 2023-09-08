@@ -1,0 +1,85 @@
+#maindiv{
+    background:none;
+}
+#container{
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+    overflow: auto;
+    height: 100vh;
+}
+#user{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+    background: #ecf0f3;
+    width: 80%;
+    height: 90%;
+    border-radius: 30px;
+}
+#userdata
+{
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+#avatar{
+    margin-left: 0%;
+    justify-content: center;
+}
+.centerdata{
+    width: 75%;
+}
+.inputbox{
+    width: 100%;
+}
+.databox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+    height: 100%;
+}
+#errorbox{
+    position: fixed;
+    top: 80px;
+    right: 25px;
+    background: #d14343;
+    border-radius: 10px;
+}
+#error{
+    font-size: 13px;
+    margin-top: 3px;
+    color: #ecf0f3;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 700px){
+    #container{
+        height: auto;
+        align-items: center;
+        flex-direction: column;
+    }
+    #user{
+        height: fit-content;
+    }
+    #userdata{
+        flex-direction: column;
+        align-items: center;
+    }
+    .databox{
+        width: 100%;
+    }
+    #avatar{
+        height: auto;
+    }
+    #image{
+        height: 150px;
+        width: 150px;
+    }
+    #FREEBOX {
+        height: 200px;
+        width: 100%;
+    }
+    }

@@ -1,0 +1,231 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+#first-section{
+    display: flex;
+    width: 100%;
+    height: 30%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+#referral-linkbox{
+    display: flex;
+    background-color: rgb(243, 243, 243);
+    border-radius: 30px;
+    height: 50px;
+    width: 35%;
+    transition: 3s;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+#referral-codebox{
+    display: flex;
+    background-color: rgb(243, 243, 243);
+    border-radius: 30px;
+    height: 50px;
+    width: 20%;
+    margin-left: 40px;
+    transition: 3s;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+.link-icon{
+    display: flex;
+    background-color: rgb(113, 113, 204);
+    width: 15%;
+    height: 100%;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    align-items: center;
+}
+.link-icon i{
+    font-size: calc(12px + 1vw);
+    padding-left: 30%;
+    color: #eaebf5;
+}
+#code-icon{
+    width: 27%;
+}
+.referral-stuff{
+    display: flex;
+    align-items: center;
+    width: 70%;
+    white-space: nowrap;
+    overflow: auto;
+}
+.referral-stuff::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #3a3838;
+  }
+  
+  .referral-stuff::-webkit-scrollbar {
+    width: 4px; 
+    height: 3px; 
+    background-color: #F5F5F5;
+  }
+.referral-stuff p{
+    font-size: 19px;
+    margin-left: 10px;
+}
+.referral-stuff i{
+    font-size: 21px;
+    margin-left: 10px;
+}
+.copy-btn{
+    display: flex;
+    background-color: rgb(243, 243, 243);
+    width: 15%;
+    height: 100%;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    align-items: center;
+}
+.copybtn{
+    border: none;
+    outline: none;
+    background: none;
+    padding-left: 30%;
+}
+.copybtn i{
+    font-size: calc(12px + 1vw);
+}
+#copybtnid{
+    padding-left: 0px;
+    margin-left: -5px;
+}
+.balbox{
+    position: relative;
+    top: 0;
+    margin-top: 0px;
+}
+#referralsCount{
+    background: linear-gradient(black, rgb(83, 81, 81));
+    margin-left: 30px;
+    transition: 3s;
+    align-items: center;
+    justify-content: space-around;
+}
+#totalicon{
+    padding: calc(0.1rem + 1.3vw);
+}
+.icon{
+    margin-left: 0px;
+}
+#totalicon i {
+    font-size: calc(1.4rem + 1vw);
+}
+.baltext h1{
+    margin-left: 17px;
+}
+.baltext h4{
+    margin-left: 0px;
+}
+#Referrals-Data{
+    margin-top: 70px;
+    position: relative;
+    width: 75vw;
+}
+
+#table{
+    width: 100%;
+    border: 1px;
+    font-size: 18px;
+}
+thead{
+    background-color: #212044;
+    color: #eaebf5;
+}
+tbody{
+    background-color: #e2e2e7;
+    color: #000000;
+    text-align: center;
+    
+}
+thead th{
+    padding: 10px;
+}
+tbody td{
+    padding: 7px;
+}
+#noreferrals{
+    text-align: center;
+    background-color: #e2e2e7;
+    margin-right: 0%;
+}
+
+@media only screen and (max-width: 600px){
+    #container{
+        width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+    #first-section{
+        position: relative;
+        padding: 0px;
+        flex-direction: column;
+        margin-top: 30px;
+        height: auto;
+        width: 100%;
+        align-items: center;
+        /* top: 20px; */
+    }
+#referral-linkbox{
+    margin: 0px;
+    width: 85%;
+    height: 45px;
+    margin-left: 0px
+}
+.referral-stuff::-webkit-scrollbar-thumb {
+    background: none;
+}
+.link-icon i{
+    font-size: calc(15px + 2vw);
+    padding-left: 30%;
+    color: #eaebf5;
+}
+.copybtn i{
+    font-size: calc(15px + 2vw);
+}
+#referral-codebox{
+    margin: 0px;
+    width: 50%;
+    height: 45px;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+#copybtnid{
+    margin-left: -10px;
+}
+#referralsCount{
+    margin-left: 0px;
+    margin-top: 20px;
+    max-width: 350px;
+
+}
+#totalicon{
+    margin-left: 25px;
+    padding: calc(0.1rem + 2.3vw);
+}
+#totalicon i{
+    font-size: calc(1.4rem + 4vw);
+}
+#Referrals-Data{
+    margin-left: 0px;
+    width: 85%;
+    overflow: auto;
+}
+#table{
+    width: 100%;
+}
+thead th{
+    padding: 4px 50px;
+}
+tbody td{
+    width: 10px;
+    padding: 4px 50px;
+}
+}

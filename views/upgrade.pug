@@ -1,0 +1,85 @@
+extends account-base.pug
+
+block title
+    title Upgrade
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/account-base.js" defer)
+    script(src="../static/upgrade.js" defer)
+
+block link
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/account-base.css")
+    link(rel="stylesheet", href="../static/form.css")
+    link(rel="stylesheet", href="../static/upgrade.css")
+
+
+block content
+    div#container
+        div#box
+            #method-logo
+                i(class="fa-solid fa-arrow-up-wide-short" id="method-logo-i")
+            #method-name Upgrade Your Account
+            form(action="/upgrade" method="post" id="upgrade-form") 
+                label(for="currentpkg") Current Package:
+                #currentpkgbox.boxee
+                    input(name="currentpkg" type="text" id="currentpkg" value=currentUser.plan readonly)
+                label(for="currentpkg") Select Package:
+                #selectpkgbox.boxee
+                    select(name="selectpkg" id="selectpkg")
+                        option(value="STANDARD") STANDARD
+                        option(value="PREMIUM") PREMIUM
+                label(for="pkgprice") Package Price:
+                #pkgpricebox.boxee
+                    input(name="pkgprice" type="text" id="pkgprice" readonly)
+                label#dur(for="pkgduration") Package Duration:
+                #pkgdurationbox.boxee
+                    select(name="pkgduration" id="pkgduration")
+                        option(value="1 Month") 1 Month
+                        option(value="2 Months") 2 Months
+                        option(value="6 Months") 6 Months
+                        option(value="1 Year") 1 Year
+                label(for="availbalance") Available Balance:
+                #availbalancebox.boxee
+                    input(name="availbalance" type="text" id="availbalance" value=`${currentUser.availableBalance} GOT` readonly)
+                label(for="reqprice") Required Price:
+                #reqpricebox.boxee
+                    input(name="reqprice" type="text" id="reqprice" readonly)
+                button#buypkg(class="btn" type="button" onclick="onBuyPkg()") Buy Package
+                    //- input.boxee(name="pkgduration" type="text" id="pkgduration" value=`${currentUser.availableBalance} GOT` readonly)
+        #errorbox
+            p#error
+    #confirmationPopup 
+        #popup.popup 
+            #inf.details 
+                h2 CONFIRMATION REQUIRED
+            #pkg.details
+                p Selected Package:
+                p#pkgp STANDARD
+            #pkgdur.details
+                p Selected Duration:
+                p#pkgdurp 1 Month
+            #availamo.details
+                p Available Amount:
+                p#availamop 767.67 GOT
+            #totamo.details
+                p Total Amount:
+                p#totamop -20.00 GOT
+            #btns.details
+                button#confirm.btn.confirmbtn(onclick="onConfirm()") Confirm
+                button#cancel.btn.confirmbtn(onclick="onCancel()") Cancel
+        #statusmessage.popup
+            #statusicon
+                .wrapper
+                    svg.checkmark(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 52 52')
+                        circle.checkmark__circle(cx='26' cy='26' r='25' fill='none')
+                        path.checkmark__check(fill='none' d='M14.1 27.2l7.1 7.2 16.7-16.8')
+                        //- path.checkmark__check(fill='none' d='M13,13 L38,38')
+                        //- path.checkmark__check(fill='none' d='M38,13 L13,38')
+            #statusmes
+                p#mess Your Account Has Been Upgraded Successfully 
+            #statusbtn
+                button#thankyou.btn(onclick="onOk()") Thank You
+        

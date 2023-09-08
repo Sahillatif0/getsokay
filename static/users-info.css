@@ -1,0 +1,131 @@
+#maindiv{
+    background: none;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+}
+#search-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+}
+#searchbox{
+    border-radius: 20px;
+    border: 2px solid black;
+    display: flex;
+    width: 50%;
+    overflow: hidden;
+    min-width: 400px;
+}
+#searchinput{
+    width: 90%;
+}
+#search{
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+}
+#searchicon{
+    width: 10%;
+}
+#searchicon button{
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+}
+#searchicon i{
+    font-size: 22px;
+}
+#users{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.user{
+    display: flex;
+    width: 90%;
+    height: 100px;
+    margin: 15px 0px;
+    padding: 0px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -4px 20px white;
+    align-items: center;
+}
+.infobox{
+    display: flex;
+    align-items: center;
+}
+.usernamebox{
+    height: 100%;
+    width: 22%;
+}
+.availbalbox{
+    height: 100%;
+    width: 18%;
+}
+.planbox{
+    height: 100%;
+    width: 12%;
+}
+.accountbox{
+    height: 100%;
+    width: 20%;
+}
+.btnsbox{
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 28%;
+}
+.btn{
+    border: none;
+    padding: 8px 20px;
+    font-weight: bold;
+    margin-left: 5px;
+    border-radius: 10px;
+    color: #ecf0f3;
+    box-shadow: 7px 4px 8px #cbced1, -4px 7px 16px white;
+}
+.btn:hover{
+    opacity: 0.7;
+    transition: 5ms;
+}
+.edit{
+    background: linear-gradient(rgb(25, 160, 25),rgb(133, 197, 133));
+}
+.view{
+    background: linear-gradient(rgb(53, 207, 218),rgb(128, 226, 233));
+}
+.message{
+    background: linear-gradient(rgb(236, 94, 58),rgb(236, 120, 120));
+}
+@media only screen and (max-width: 500px){
+#searchbox{
+    width: 80%;
+    min-width: unset;
+}
+#searchinput{
+    width: 83%;
+}
+#searchicon{
+    width: 17%;
+}
+}
+@media only screen and (max-width: 500px){
+.accountbox, .planbox{
+    visibility: hidden;
+}
+}
+@media only screen and (max-width: 400px){
+    .availbalbox{
+        visibility: hidden;
+    }
+    }

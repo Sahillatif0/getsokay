@@ -1,0 +1,43 @@
+extends account-base.pug
+
+block title
+    title Setting
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/dashboard.js")
+
+block link
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/account-base.css")
+    link(rel="stylesheet", href="../static/yourads.css")
+
+
+
+block content
+    div#container
+        a#create(href = "/createads") #[#createnewad Create New Ad] 
+        #userads
+            table#table
+                thead
+                    th S/N
+                    th Ad Name
+                    th Clicks Asked
+                    th Clicks Done
+                    th CreatedAt
+                    th Status
+                tbody
+                    - let ii = 0;
+                    - for(let i=(yourads.length-1); i>=0; i--)
+                        - ii++;
+                        tr
+                            td=ii
+                            td=yourads[i].ad_Name
+                            td=yourads[i].clickasked
+                            td=yourads[i].clickdone
+                            td#date=yourads[i].createdAt
+                            td=yourads[i].status
+            - if(yourads.length===0)
+                p#noads You don't have any Ad
+        #FREEBOX

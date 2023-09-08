@@ -1,0 +1,97 @@
+extends admin-base.pug
+
+block title
+    title Users Info
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/user-data-edit.js" defer)
+
+block link
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/admin-base.css")
+    link(rel="stylesheet", href="../static/setting.css")
+    link(rel="stylesheet", href="../static/user-data-edit.css")
+
+
+
+block content
+    div#container
+        #user
+            #userdata
+                #important-data.databox 
+                    #avatar
+                        #image(avatar=user.avatar)
+                        i(class="fa fa-pen" onclick="changeavatar()")
+                    .centerdata
+                        label(for="userID-field") UserID: 
+                        #userIDbox.inputbox 
+                            input.input(type="Number" id="userID-field" name = "userID" readonly value=user.userID) 
+                            i#userID-i(class="fa fa-pen")
+                        label(for="username-field") Username: 
+                        #usernamebox.inputbox
+                            input.input(type="text" id="username-field" name = "username" readonly value=user.username) 
+                            i#username-i(class="fa fa-pen")
+                        label(for="name-field") Name: 
+                        #namebox.inputbox 
+                            input.input(type="text" id="name-field" name = "name" readonly value=user.name) 
+                            i#name-i(class="fa fa-pen")
+                #balance-data.databox 
+                    .centerdata
+                        label(for="email-field") Email: 
+                        #emailbox.inputbox 
+                            input.input(type="email" id="email-field" name = "email" readonly value=user.email) 
+                            i#email-i(class="fa fa-pen")
+                        label(for="phone-field") Phone Number: 
+                        #phonebox.inputbox
+                            input.input(type="text" id="phone-field" name = "phone" readonly value=user.phone) 
+                            i#phone-i(class="fa fa-pen")
+                        label(for="emailstatus-field") Email Status: 
+                        #emailstatusbox.inputbox 
+                            input.input(type="text" id="emailstatus-field" name = "emailstatus" readonly value=user.emailStatus) 
+                            i#emailstatus-i(class="fa fa-pen")
+                        label(for="account-field") Account Status: 
+                        #accountbox.inputbox 
+                            input.input(type="Nummber" id="account-field" name = "account" readonly value=user.account) 
+                            i#account-i(class="fa fa-pen")
+                        label(for="plan-field") Plan: 
+                        #planbox.inputbox
+                            input.input(type="text" id="plan-field" name = "plan" readonly value=user.plan) 
+                            i#plan-i(class="fa fa-pen")
+                        label(for="createdAt-field") Created At: 
+                        #createdAtbox.inputbox 
+                            input.input(type="text" id="createdAt-field" name = "createdAt" readonly value=user.createdAt) 
+                            i#createdAt-i(class="fa fa-pen")
+                #referral-data.databox
+                    .centerdata
+                        label(for="availableBalance-field") Available Balance: 
+                        #availableBalancebox.inputbox 
+                            input.input(type="text" id="availableBalance-field" name = "availableBalance" readonly value=user.availableBalance) 
+                            i#availableBalance-i(class="fa fa-pen")
+                        label(for="withdrawnBalance-field") Withdrawn Balance: 
+                        #withdrawnBalancebox.inputbox
+                            input.input(type="text" id="withdrawnBalance-field" name = "withdrawnBalance" readonly value=user.withdrawnBalance) 
+                            i#withdrawnBalance-i(class="fa fa-pen")
+                        label(for="depositedBalance-field") Deposited Balance: 
+                        #depositedBalancebox.inputbox 
+                            input.input(type="text" id="depositedBalance-field" name = "depositedBalance" readonly value=user.depositedBalance) 
+                            i#depositedBalance-i(class="fa fa-pen")
+                        label(for="referralID-field") Referral ID: 
+                        #referralIDbox.inputbox 
+                            input.input(type="Number" id="referralID-field" name = "referralID" readonly value=user.referralID) 
+                            i#referralID-i(class="fa fa-pen")
+                        label(for="referrerID-field") Referrer ID: 
+                        #referrerIDbox.inputbox
+                            input.input(type="text" id="referrerID-field" name = "referrerID" readonly value=user.referrerID) 
+                            i#referrerID-i(class="fa fa-pen")
+                        label(for="referralCount-field") Referral Count: 
+                        #referralCountbox.inputbox 
+                            input.input(type="text" id="referralCount-field" name = "referralCount" readonly value=user.referralCount) 
+                            i#referralCount-i(class="fa fa-pen")
+            #buttons 
+                button.btn(id=`select` type="button" onclick="onSave()") Save 
+                button.btn(id=`cancel` type="button" onclick="onCancel()") Cancel
+        #errorbox
+            p#error
+        #FREEBOX

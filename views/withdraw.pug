@@ -1,0 +1,77 @@
+extends account-base.pug
+
+block title
+    title Withdrawl
+
+block scripts
+    script(src="https://kit.fontawesome.com/cb9560845e.js" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+    script(src="../static/account-base.js" defer)
+    script(src="../static/deposit.js" defer)
+
+block link
+    link(rel="stylesheet", href="../static/base.css")
+    link(rel="stylesheet", href="../static/account-base.css")
+    link(rel="stylesheet", href="../static/dashboard.css")
+    link(rel="stylesheet", href="../static/deposit.css")
+
+
+block content
+    div#container
+        h1#method Choose Method To Withdraw
+        - let host = "https://getsokay.com";
+        #first-section
+            #easypaisabox.depositbox(onclick=`window.location.href="${host}/withdrawl/easypaisa"`)
+                #easypaisabox-text.deposittext
+                    h4 Withdraw In
+                    h1 EASYPAISA
+                #easypaisaicon.icon     
+                    img(src="../static/images/easypaisa.png", alt="easypaisa")
+            #jazzcashbox.depositbox(onclick=`window.location.href="${host}/withdrawl/jazzcash"`)
+                #totaltext.deposittext
+                    h4 Withdraw In
+                    h1 JAZZCASH
+                #jazzcashicon.icon     
+                    img(src="../static/images/jazzcash.png", alt="jazzcash")
+            #tronbox.depositbox(onclick=`window.location.href="${host}/withdrawl/tronlink"`)
+                #totaltext.deposittext
+                    h4 Withdraw In
+                    h1 TRON LINK
+                #tronicon.icon     
+                    img(src="../static/images/trx.png", alt="trx")
+            
+
+        #Deposit-Data 
+            table#table
+                thead
+                    th S/N
+                    th Time
+                    th Amount
+                    th Method
+                    th Status
+                tbody
+                    - let ii = 0;
+                    - for(let i=(currentUserWithdrawls.length-1); i>=0; i--)
+                        - let date = Date.now()-currentUserWithdrawls[i].date;
+                        - let dateInMin = ((date/1000)/60).toFixed(1);
+                        - let dateInHour;
+                        - let dateInDays;
+                        - let datestring = `${dateInMin} mints ago`;
+                        - if(dateInMin>59.99){
+                        -   dateInHour = (dateInMin/60).toFixed(2);
+                        -   datestring = `${dateInHour} hours ago`;
+                        -   }
+                        -   if(dateInHour>71.99){
+                        -   dateInDays = (dateInHour/24).toFixed(1);
+                        -   datestring = `${dateInDays} days ago`;
+                        -   }
+                        - ii++;
+                        tr
+                            td=ii
+                            td#date=datestring
+                            td=currentUserWithdrawls[i].amount
+                            td=currentUserWithdrawls[i].method
+                            td=currentUserWithdrawls[i].status
+            - if(currentUserWithdrawls.length===0)
+                p#noreferrals You don't have any Withdrawl history
+        #FREEBOX
